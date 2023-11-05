@@ -47,6 +47,9 @@ double Probability(int rounds_count) {
 }
 
 int main(int argc, char* argv[]) {
+    if (argc == 1) {
+        throw std::logic_error("Не указано число раундов");
+    }
     auto start = std::chrono::steady_clock::now();
     double prob = Probability(atoi(argv[1]));
     auto end = std::chrono::steady_clock::now();
